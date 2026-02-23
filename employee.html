@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stayl/employee.css">
+    <title>Диктант сотрудника</title>
+</head>
+
+<body oncopy="return false" oncut="return false" oncontextmenu="return false">
+
+    <div class="header">
+        <div id="employee"></div>
+        <div style="display:flex;align-items:center;gap:15px;">
+            <span id="langBadge"
+                style="background:rgba(255,255,255,0.2);padding:5px 12px;border-radius:20px;font-size:14px;"></span>
+             
+            <button onclick="logout()">Выйти</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h3>Диктант</h3>
+
+        <!-- Выбор языка -->
+        <div class="lang-selector">
+            <div class="lang-btn active" data-lang="ru" onclick="setLanguage('ru')">🇷🇺 Русский</div>
+            <div class="lang-btn" data-lang="uz" onclick="setLanguage('uz')">🇺🇿 Узбекский</div>
+        </div>
+
+        <!-- Блок для результата (скрыт по умолчанию) -->
+        <div id="resultBlock" style="display:none;"></div>
+
+        <!-- Аудиоплеер для Русского -->
+        <div class="audio-block active" id="audio-ru">
+            <div class="audio-label">🇷🇺 Русский диктант</div>
+            <div class="timer-block" id="timer-ru-block">
+                <span class="timer">⏱ <span id="time-ru">480</span> сек</span>
+            </div>
+            <div class="audio-controls">
+                <button class="corp-btn" id="playBtn-ru">▶️</button>
+                <button class="corp-btn" id="pauseBtn-ru">⏸</button>
+                <button class="corp-btn" id="restartBtn-ru">🔄</button>
+                <button class="corp-btn" onclick="skip(-5, 'ru')">⏪</button>
+                <button class="corp-btn" onclick="skip(5, 'ru')">⏩</button>
+                <input type="range" id="audioSlider-ru" class="audio-slider" min="0" max="100" value="0">
+                <span class="audio-time" id="audioTime-ru">0:00 / 0:00</span>
+            </div>
+            <audio id="audio-ru-player" src="audio/Ру-1-new.mp3" preload="metadata"></audio>
+            <textarea id="text-ru" class="text-input" placeholder="Введите текст диктанта..." spellcheck="false"></textarea>
+            <button onclick="submitDictation('ru')" class="submit-btn">Отправить Русский</button>
+        </div>
+
+        <!-- Аудиоплеер для Узбекского -->
+        <div class="audio-block" id="audio-uz">
+            <div class="audio-label">🇺🇿 Узбекский диктант</div>
+            <div class="timer-block" id="timer-uz-block">
+                <span class="timer">⏱ <span id="time-uz">480</span> сек</span>
+            </div>
+            <div class="audio-controls">
+                <button class="corp-btn" id="playBtn-uz">▶️</button>
+                <button class="corp-btn" id="pauseBtn-uz">⏸</button>
+                <button class="corp-btn" id="restartBtn-uz">🔄</button>
+                <button class="corp-btn" onclick="skip(-5, 'uz')">⏪</button>
+                <button class="corp-btn" onclick="skip(5, 'uz')">⏩</button>
+                <input type="range" id="audioSlider-uz" class="audio-slider" min="0" max="100" value="0">
+                <span class="audio-time" id="audioTime-uz">0:00 / 0:00</span>
+            </div>
+            <audio id="audio-uz-player" src="audio/Уз-1-new.mp3" preload="metadata"></audio>
+            <textarea id="text-uz" class="text-input" placeholder="Диктант матнини киритинг..." spellcheck="false"></textarea>
+            <button onclick="submitDictation('uz')" class="submit-btn">Отправить Узбекский</button>
+        </div>
+
+        <script src="/js/employee.js"></script>
+
+    <div class="footer">
+        <span>sam_veb_razrabotchik</span>
+    </div>
+
+</body>
+
+</html>

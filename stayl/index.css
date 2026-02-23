@@ -1,0 +1,13 @@
+body{margin:0;font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+display:flex;justify-content:center;align-items:center;height:100vh;}
+.card{background:white;padding:40px;border-radius:15px;width:350px;box-shadow:0 15px 40px rgba(0,0,0,0.3);text-align:center;
+animation:fadeInUp 0.8s ease-out;}
+h2{margin-bottom:20px;color:#2c5364;animation:fadeIn 1s ease-out 0.3s both;}
+input{width:100%;padding:12px;margin:10px 0;border-radius:8px;border:1px solid #ccc;font-size:15px;animation:fadeIn 1s ease-out 0.5s both;}
+button{width:100%;padding:12px;background:#2c5364;color:white;border:none;border-radius:8px;font-size:16px;cursor:pointer;transition:0.3s;animation:fadeIn 1s ease-out 0.7s both;}
+button:hover{background:#1c3945;transform:scale(1.02);}
+.error{color:red;font-size:13px;margin-top:10px;}
+.footer{position:fixed;bottom:20px;text-align:center;color:#ccc;font-size:14px;}
+
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}

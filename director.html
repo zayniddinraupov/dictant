@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/stayl/director.css">
+<title>Панель директора</title>
+<style>
+
+</style>
+</head>
+<body oncopy="return false" oncut="return false" oncontextmenu="return false">
+
+<!-- Модальное окно просмотра диктантов сотрудника -->
+<div id="dictationModal" class="modal">
+<div class="modal-content" style="max-width:900px;">
+<span class="modal-close" onclick="closeModal()">&times;</span>
+<h3>Просмотр диктантов сотрудника</h3>
+<div class="stats-box">
+<div class="stat-item"><div class="stat-value" id="modalEmployee">-</div><div class="stat-label">Сотрудник</div></div>
+</div>
+<div id="allDiktatsContainer"></div>
+</div>
+</div>
+
+<div class="header">
+<h2>Панель директора</h2>
+<button onclick="logout()">Выйти</button>
+</div>
+
+<div class="container">
+<h3>Диктанты сотрудников</h3>
+
+<label>Фильтр по сотруднику:
+<input type="text" id="searchEmployee" placeholder="Введите ФИО сотрудника">
+<button onclick="filterByEmployee()">Поиск</button>
+<button onclick="clearEmployeeFilter()">Показать всех</button>
+<button onclick="exportExcel()">Экспорт в Excel</button>
+<button onclick="clearAll()">Очистить всё</button>
+</label>
+
+<label>Фильтр по языку:
+<select id="filterLanguage">
+<option value="">Все</option>
+<option value="ru">🇷🇺 Русский</option>
+<option value="uz">🇺🇿 Узбекский</option>
+</select>
+<button onclick="filterByLanguage()">Применить</button>
+</label>
+
+<table id="dictationTable">
+<thead>
+<tr>
+<th data-sort="employee">Сотрудник</th>
+<th>Язык</th>
+<th>Оригинал</th>
+<th>Написанный текст</th>
+<th data-sort="date">Время написания</th>
+<th data-sort="timeSpent">Время (сек)</th>
+<th data-sort="progress">Прогресс</th>
+<th>Действие</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+</div>
+    <div class="footer">
+        <span>sam_veb_razrabotchik</span>
+    </div>
+    <script src="/js/directoctor.js"></script>
+
+</body>
+</html>

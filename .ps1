@@ -1,0 +1,1 @@
+PS> Get-Content "C:\Users\z.raupov\Desktop\диктант\director.html" | Select-Object -Last 10
