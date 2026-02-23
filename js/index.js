@@ -1,10 +1,10 @@
 // Руководитель
-const directorLogin="director";
-const directorPass="Admin_2026";
+const directorLogin="Admin";
+const directorPass="12345";
 
 // Сотрудники
 const employees=[
-{login:"Иванов Иван", password:"12345"},
+{login:"Раупов Зайниддин", password:"12345"},
 {login:"Петров Петр", password:"54321"},
 {login:"Сидоров Сидор", password:"11111"}
 ];
